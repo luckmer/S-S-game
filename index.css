@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.grid {
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    width: 210px;
+    height: 400px;
+    border: 1px solid black;
+}
+.PanelContext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: c;
+    flex-direction: column;
+}
+.PanelContext button {
+    width: 200px;
+    height: 50px;
+    margin: 10px 0 0 0;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 100px;
+}
+
+.game {
+    width: 100%;
+    height: 100%;
+}
+
+.character {
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+.block {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+}
