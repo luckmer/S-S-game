@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded" , ()=>{
                 grid.removeChild(block);
                 grid.removeChild(money)
             }
-            
             money.style.top = nextTop + "px";
             money.style.left = testLeft + "px";
             block.style.top = top + "px";
@@ -64,7 +63,6 @@ document.addEventListener("DOMContentLoaded" , ()=>{
             left = h* 70 + 70
             testLeft=h* 70 - 70
         }
-
     return { top, block, left,control,nextTop,testLeft };
 }
 
@@ -86,7 +84,6 @@ document.addEventListener("DOMContentLoaded" , ()=>{
         return money;
     }
 
-
     function moneyCollision(nextTop,right,money){
         if (nextTop < 265 && nextTop > 262 && testLeft === right) {
             money.classList.add("Delete")
@@ -94,6 +91,7 @@ document.addEventListener("DOMContentLoaded" , ()=>{
         }
         
     }
+
     function Collision(top, left, right, counter, grid, block, timerId) {
         console.log(points)
         if (top < 400 && top > 262 && left === right) {       
@@ -105,7 +103,6 @@ document.addEventListener("DOMContentLoaded" , ()=>{
         };
         return counter;
     };
-
 
     function start(){
         Block();
