@@ -3,22 +3,25 @@ document.addEventListener("DOMContentLoaded" , ()=>{
     const grid = document.querySelector(".game");
     const Counter = document.querySelector(".counter");
     const Button = document.querySelector("button");
+    const Life = document.querySelector(".life")
     const Point = document.querySelector(".points")
+    
     const colors = ["red","tomato","orange"];
     const width  =[70,140];
     let right = 0;
     let points= 0;
+    let life = 3;
     let counter = 0;    
     let left;
     let testLeft;
 
     function moveLeft(){
-        right > 140 ? right -=70 : right += 70
+        right >= 140 ? right =140: right += 70
         character.style.left = right + "px";
     };
 
     function moveRight(){
-        right < 0 ? right += 70 : right -= 70
+        right <= 0 ? right =0 : right -= 70
         character.style.left = right + "px";
     };
 
@@ -89,18 +92,19 @@ document.addEventListener("DOMContentLoaded" , ()=>{
             money.classList.add("Delete")
             Point.innerHTML = "Points : " + points++
         }
-        
     }
 
     function Collision(top, left, right, counter, grid, block, timerId) {
-        console.log(points)
-        if (top < 400 && top > 262 && left === right) {       
+        Life.innerHTML = "life : " +  life
+        if (top < 265 && top > 262 && left === right) life -= 1 
+        if(life <= 0 ){
             counter = 0;
             grid.removeChild(block);
             grid.removeChild(grid.firstChild);
             clearInterval(timerId);
+            location.reload(true);
             alert("you lose ");
-        };
+        }
         return counter;
     };
 
@@ -119,4 +123,3 @@ document.addEventListener("DOMContentLoaded" , ()=>{
     Button.addEventListener("click" , start)
     document.addEventListener("keyup", joystick);
 })
-
