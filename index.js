@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded" , ()=>{
     };
 
     function start(){
+        Button.classList.add("Delete")
         Block();
     };
     
